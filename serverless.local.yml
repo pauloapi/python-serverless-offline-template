@@ -1,0 +1,26 @@
+service: offline
+
+provider:
+  name: aws
+  runtime: python3.6
+  region: ap-southeast-1
+  memorySize: 512
+  timeout: 10
+  stage: ${opt:stage, 'dev'}
+  versionFunctions: true
+  stackName: ${self:service}
+  environment:  
+    # offline environment here
+
+custom:
+  # custom settings here
+
+resources:
+  Resources:
+    # fffline resources here
+
+plugins:
+  # other serverless offline plugin
+  - serverless-offline-python
+  
+functions:

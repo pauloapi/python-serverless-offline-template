@@ -1,0 +1,12 @@
+service: hi
+provider:
+  name: aws
+  runtime: python3.6
+
+functions:
+  hi:
+    handler: handler.hi
+    events:
+      - http:
+          path: hi
+          method: GET
